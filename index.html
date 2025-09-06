@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Tic Tac Toe</h1>
+
+    <div class="scoreboard">
+      
+      <p class="p1">Player 1 : <span id="playerXScore">0</span></p>
+      <p class="p2">Player 2 : <span id="playerOScore">0</span></p>
+    </div>
+    
+<div class="winner" id="winner"></div>
+ <div class="win-image" id="winImage">
+      <img src="https://i.pinimg.com/originals/9d/43/09/9d43098591f0efcdc74b79183a706b60.gif" alt="Winner Trophy">
+    </div>
+    <div class="move-images">
+      <div id="leftImage" class="move-img">
+        <img src="grizzl.gif" alt="Move Image">
+      </div>
+      <div id="rightImage" class="move-img">
+        <img src="grizz.gif" alt="Move Image">
+      </div>
+    </div>
+    <div id="drawImage" class="draw-img">
+      <img src="bear.png" alt="Draw Image">
+    </div>
+    <div class="board" id="board"></div>
+    
+    <div class="buttons">
+      <button onclick="restartGame()">Restart Game</button>
+      <button onclick="newGame()">New Game</button>
+    </div>
+  </div>
+    <div class="audio-controls">
+      <img id="muteBtn" src="mute.svg" alt="Mute Button">
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+    </div>
+  </div>
+<audio id="bgMusic" src="songs/bg.mp3" preload="auto" loop></audio>
+<audio id="winSound" src="songs/win.mp3" preload="auto" loop></audio>
+<audio id="drawSound" src="songs/draw.mp3" preload="auto" loop></audio>
+
+
+</div>
+
+ <script src="script.js"></script>
+</body>
+</html>

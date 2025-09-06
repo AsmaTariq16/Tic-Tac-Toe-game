@@ -1,0 +1,506 @@
+                                        
+  *{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+}
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to right,  #78452E , #9B6042 , #BB7C59 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  width: 100vw;
+  
+  overflow: hidden;
+}
+
+.game-container {
+overflow: hidden;
+  width: 100vw;
+}
+
+h1 {
+  position: absolute;
+    z-index: -11;
+  margin-left: 42vw;
+  color: burlywood;
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.p1{
+  position: relative;
+  right: -19vw;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: burlywood;
+  display: inline-block;
+}
+.p2{
+  position: relative;
+  left: 72vw;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: burlywood;
+  display: inline-block;
+}
+
+.scoreboard {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #444;
+}
+.win-image {
+
+  position: absolute;
+    z-index: -11;
+  display: none;
+  margin-bottom: 15px;
+}
+
+.win-image img {
+  margin-top: 40vh;
+  width: 400px;
+  height: 200px;
+  margin-left: 3vw;
+  animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 5px;
+  margin-top: 14vh;
+  margin-bottom: 20px;
+  margin-left: 41vw;
+  margin-right: 20vw;
+}
+
+.cell {
+  width: 120px;
+  height: 120px;
+  background: #D49674;
+  border: 2px solid #Bb7659;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cell:hover {
+  background: #9B6042;
+}
+
+.winner {
+  margin-top: 5vh;
+  position: absolute;
+    z-index: -11;
+  left: 47vw;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: rgb(26, 49, 26);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  
+  
+  position: absolute;
+    left: 43%;
+}
+
+button {
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border: none;
+  background: linear-gradient(to right, #271A15 , #2b201b , #1e1815);
+  color: burlywood;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: transparent;
+}
+.move-images {
+  position: absolute;
+    z-index: -11;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -5px;
+}
+
+.move-img {
+  z-index: -10;
+  width: 400px;
+  height: 100px;
+  display: inline-block;
+  margin-top: 5vh;
+  margin-left: 3vw;
+}
+#rightImage{
+  position: relative;
+  LEFT: 70vw;
+}
+.move-img img {
+  width: 100%;
+  height: auto;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  gap: 27px;
+  margin-top: 15px;
+  position: absolute;;
+  bottom: 5vh;
+  left: 44vw;
+  
+  
+}
+
+.audio-controls img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+input[type="range"] {
+  width: 200px;
+  height: 5px;
+  border-radius: 5px;
+  outline: none;
+ 
+}
+
+.audio-controls img:hover {
+  transform: scale(1.1);
+}
+#okBtn{
+   border: none;
+  text-align: center;
+  font-size: 16px;  
+  display:none; 
+  margin-top:90vh;
+   padding:8px 20px;
+    font-size:16px; 
+    cursor:pointer;
+    position: relative;
+    right: 38vw;
+}
+/* Winner image styling */
+.win-image {
+  z-index: -11;
+  display: none;
+  position: absolute;
+  top: 30%; /* middle vertically */
+  transform: translateY(-50%);
+}
+
+.win-image.left {
+  left: 5%;   /* Player 1 side */
+}
+
+.win-image.right {
+  right: 5%;  /* Player 2 side */
+}
+.draw-img {
+  position: absolute;
+    z-index: -11;
+  display: none;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+.draw-img.left {
+  left: 7%;  
+}
+
+.draw-img.right {
+  right: 7%; 
+}
+
+.draw-img img {
+  width: 500px;
+  height: 40vh;
+  margin-top: 40vh;
+  animation: fadeIn 0.5s ease;}
+ @media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  h1 {
+    margin-left: 25vw;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .p1{
+    top: 9vh;
+     right: -10vw;
+  }
+  .p2{
+    top: 9vh;
+    left: 23vw;
+    margin-left: 50vw;
+  }
+  .p1, .p2 {
+
+    position: relative;
+    
+    display: inline-block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 5px ;
+  }
+
+  .board {
+    
+    margin: 20px auto;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 5px;
+    margin-left: 17vw;
+    margin-top: 32vh;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .winner {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 18vh;
+    margin-left: 7vw;
+    left: 25vw;
+    top: 15vh;
+
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    left: 17vw;
+
+  }
+
+  button {
+    width: 65vw;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .move-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top:40vh;
+    left: 30vw;
+  }
+
+  .move-img {
+    width: 150px;
+    height: auto;
+    margin: 0;
+    margin-top: -20vh;
+  }
+  #leftImage {
+    position: relative;
+    right: 25vw;
+  }
+  #rightImage {
+    position: relative;
+    left: 25vw;
+  }
+
+  .win-image img,
+  .draw-img img {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .win-image.left,
+  .win-image.right,
+  .draw-img.left,
+  .draw-img.right {
+    margin-top: -40px;
+  }
+
+  .audio-controls {
+    flex-direction: row;
+    gap: 15px;
+  left: 4vw;
+
+  top: -87vh;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  input[type="range"] {
+  display: none;
+  }
+}
+@media (max-width:600px)and (min-width:450px) {
+  .board{
+    margin-left: 27vw;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 601px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  .audio-controls {
+    flex-direction: row;
+    gap: 15px;
+  left: 4vw;
+
+  top: -87vh;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  input[type="range"] {
+  display: none;
+  }
+
+  h1 {
+    margin-left: 29vw;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .p1{
+  right: -8vw;
+  }
+  .p2{
+    left: 48vw;
+  }
+  .p1, .p2 {
+    top: 6vh;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 2rem;
+  }
+
+  .board {
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    margin: 14vw auto 20px 28vw;
+  }
+
+  .cell {
+    width: 120px;
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .winner {
+    
+    text-align: center;
+    font-size: 1.2rem;
+    left: 45vw;
+  }
+
+  .buttons {
+    flex-direction: row;
+    left: 30vw;
+    gap: 15px;
+  }
+
+  button {
+    width: 159px;
+    font-size: 1.5rem;
+  }
+
+  .move-images {
+    
+
+
+  }
+
+  .move-img {
+    width: 250px;
+    height: auto;
+    margin: 10px auto;
+    margin-top: -3vh;
+    z-index: -10;
+    position: absolute;
+    top:8vh;
+  }
+  #leftImage{
+    position: relative;
+    left: 0vw;
+  }
+  #rightImage {
+    position: relative;
+    left: 73vw;
+  }
+  
+
+  .win-image img, .draw-img img {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+    
+  }
+  .win-image.left{
+    margin-left: -8vw;
+  }
+  .win-image.right{
+    transform: rotateY(180deg);
+    right: -3vw;
+  }
+  .win-image.left, .win-image.right,
+  .draw-img.left, .draw-img.right {
+    margin-top: -8vw;
+    
+  }
+  .draw-img.left {
+  left: 0vw;  
+  }
+  .draw-img.right{
+  right: 0vw;
+  }
+} 
+
