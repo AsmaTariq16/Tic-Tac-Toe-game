@@ -22,13 +22,14 @@ Features animated moves, sound effects, responsive design, and scoreboard tracki
 ---
 
 ## 📸 Screenshots
-### Main Board
-![Board Screenshot](https://i.pinimg.com/originals/9d/43/09/9d43098591f0efcdc74b79183a706b60.gif)
+
+![Screenshot 2025-09-06 123448](https://github.com/user-attachments/assets/ceef8b10-913c-42fd-8b2a-fb9b50916088)
 
 ---
 
 ## 🚀 Live Demo
-👉 [Play on GitHub Pages](https://username.github.io/Tic-Tac-Toe-game/)  
+👉 vercel: https://tic-tac-toe-game-chi-pink.vercel.app/
+
 
 ---
 
